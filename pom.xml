@@ -12,6 +12,9 @@
         <module>eurekaserver</module>
         <module>configserver</module>
         <module>order</module>
+        <module>menu</module>
+        <module>account</module>
+        <module>user</module>
     </modules>
 
     <parent>
