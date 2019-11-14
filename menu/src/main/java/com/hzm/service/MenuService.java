@@ -1,6 +1,7 @@
 package com.hzm.service;
 
 import com.hzm.entity.Menu;
+import com.hzm.entity.Type;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ public interface MenuService {
     void save(Menu menu);
     void update(Menu menu);
     void deleteById(long id);
+    List<Type> findTypes();
 }

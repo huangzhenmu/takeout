@@ -29,4 +29,7 @@ public interface MenuProvider {
 
     @DeleteMapping("/menu/deleteById/{id}")
     public void deleteById(@PathVariable("id") long id);
+
+    @GetMapping("menu/findTypes")
+    public List<Type> findTypes();
 }

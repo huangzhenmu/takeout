@@ -2,6 +2,7 @@ package com.hzm.controller;
 
 import com.hzm.entity.Menu;
 import com.hzm.entity.MenuVo;
+import com.hzm.entity.Type;
 import com.hzm.service.impl.MenuServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -50,5 +51,10 @@ public class MenuHandler {
     @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable("id") long id){
         menuService.deleteById(id);
+    }
+
+    @GetMapping("/findTypes")
+    public List<Type> findTypes(){
+        return menuService.findTypes();
     }
 }

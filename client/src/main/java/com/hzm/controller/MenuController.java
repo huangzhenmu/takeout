@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/client")
-public class ClientController {
+@RequestMapping("/menu")
+public class MenuController {
 
     @Autowired
     private MenuProvider menuProvider;
@@ -55,5 +56,14 @@ public class ClientController {
         //orderFeign.deleteByMid(id);
         menuProvider.deleteById(id);
         return "redirect:/account/redirect/menu_manage";
+    }
+
+    @GetMapping("/findTypes")
+    public ModelAndView findTypes(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("menu_add");
+        modelAndView.addObject("list",menuProvider.findTypes());
+        return modelAndView;
+
     }
 }
