@@ -7,7 +7,7 @@ spring:
     url: jdbc:mysql://localhost:3306/takeout?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
 eureka:
   client:
     service-url:
@@ -15,5 +15,5 @@ eureka:
   instance:
     prefer-ip-address: true
 mybatis:
-  mapper-locations: classpath:/mapping/*.xml
+  mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.hzm.entity #指定pojo扫描包，使用自定义的类型
