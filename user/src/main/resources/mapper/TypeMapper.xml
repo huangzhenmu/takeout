@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="com.hzm.repository.TypeRepository">
-    <select id="findById" resultType="com.hzm.entity.Type">
-        select * from t_type where id = #{id}
+<mapper namespace="com.hzm.repository.UserRepository">
+    <select id="findAll" resultType="com.hzm.entity.User">
+        select * from t_user order by id limit #{param1},#{param2}
     </select>
-    <select id="findAll" resultType="com.hzm.entity.Type">
-        select * from t_type
+
+    <select id="count" resultType="int">
+        select count(*) from t_user;
     </select>
+
+    <insert id="save" parameterType="com.hzm.entity.User">
+        insert into t_user(username,password,nickname,gender,telephone,registerdate,address) values(#{username},#{password},#{nickname},#{gender},#{telephone},#{registerdate},#{address})
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+        delete from t_user where id = #{id}
+    </delete>
+
 </mapper>
