@@ -3,7 +3,7 @@ package com.hzm.controller;
 import com.hzm.entity.Menu;
 import com.hzm.entity.MenuVo;
 import com.hzm.entity.Type;
-import com.hzm.service.impl.MenuServiceImpl;
+import com.hzm.services.impl.MenuServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;

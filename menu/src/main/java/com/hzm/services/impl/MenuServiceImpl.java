@@ -1,10 +1,10 @@
-package com.hzm.service.impl;
+package com.hzm.services.impl;
 
 import com.hzm.entity.Menu;
 import com.hzm.entity.Type;
 import com.hzm.repository.MenuRepository;
 import com.hzm.repository.TypeRepository;
-import com.hzm.service.MenuService;
+import com.hzm.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

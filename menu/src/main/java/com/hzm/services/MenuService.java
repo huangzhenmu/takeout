@@ -1,4 +1,4 @@
-package com.hzm.service;
+package com.hzm.services;
 
 import com.hzm.entity.Menu;
 import com.hzm.entity.Type;
