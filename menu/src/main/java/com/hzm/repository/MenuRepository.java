@@ -5,7 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-@Mapper
 public interface MenuRepository {
     public List<Menu> findAll(int index,int limit);
     public int count();

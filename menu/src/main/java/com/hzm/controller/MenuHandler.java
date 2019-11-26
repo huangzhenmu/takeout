@@ -1,8 +1,9 @@
 package com.hzm.controller;
 
 import com.hzm.entity.Menu;
-import com.hzm.repository.MenuRepository;
-import com.hzm.service.impl.MenuServiceImpl;
+import com.hzm.entity.MenuVo;
+import com.hzm.entity.Type;
+import com.hzm.services.impl.MenuServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,9 @@ public class MenuHandler {
     }
 
     @GetMapping("/findAll/{index}/{limit}")
-    public List<Menu> findAll(@PathVariable("index") int index, @PathVariable("limit") int limit){
-        return menuService.findAll(index,limit);
+    public MenuVo findAll(@PathVariable("index") int index, @PathVariable("limit") int limit){
+        List<Menu> list = menuService.findAll(index, limit);
+        return new MenuVo(200,"成功",menuService.count(),list);
     }
     @GetMapping("/count")
     public int count(){
@@ -46,8 +48,13 @@ public class MenuHandler {
         menuService.update(menu);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable("id") long id){
         menuService.deleteById(id);
+    }
+
+    @GetMapping("/findTypes")
+    public List<Type> findTypes(){
+        return menuService.findTypes();
     }
 }
