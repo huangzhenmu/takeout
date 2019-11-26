@@ -16,4 +16,4 @@ eureka:
     prefer-ip-address: true
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: com.hzm.entity #指定pojo扫描包，使用自定义的类型
+  type-aliases-package: com.hzm.entity
